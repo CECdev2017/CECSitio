@@ -5,11 +5,8 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: postgresql
+  adapter: sqlite3
   pool: 5
-  host: localhost
-  username: cec
-  password: CECdev2017
   timeout: 5000
 
 development:
