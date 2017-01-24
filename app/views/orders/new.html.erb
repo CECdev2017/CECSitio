@@ -1,0 +1,33 @@
+<header class="secondary">
+				<div class="background-image-holder parallax-background overlay" data-stellar-background-ratio="0.9">
+				<ul class="bxslider" >
+					  <li><%= image_tag('banner-web1.jpg', class: 'background-image', alt:'Background') %></li>
+					  <li><%= image_tag('banner-web.jpg', class: 'background-image', alt:'Background') %></li>
+				</ul>
+					<!-- <%= image_tag('bg-5.jpg', class: 'background-image', alt:'Background') %> 
+					<img class="background-image" alt="Background Image" src="images/1600x900.png">-->
+				</div>
+
+				<div class="container align-vertical hero">
+					<div class="row">
+						<div class="col-md-5 text-left">
+						<!--%= image_tag('bg-7.jpg', class: 'background-image', alt:'Background') %>-->
+
+							<h1> </h1>
+							
+						</div>
+					</div><!--end of row-->
+				</div><!--end of container-->
+			</header>
+
+			<br>
+			<%= render 'form' %>
+			
+			<br>
+
+			<!--SCRIPT FOR BRAINTREE -->
+			<script>
+			braintree.setup('<%= @client_token %>', 'dropin', {
+  container: 'payment-form'
+});
+			</script>

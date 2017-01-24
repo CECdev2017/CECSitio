@@ -1,5 +1,17 @@
 $(document).ready(function() {
 	
+
+	
+
+		
+
+  	slider = $('.bxslider').bxSlider();
+
+
+	
+	slider.startAuto();
+	
+
 	"use strict";
 	
 	//Parallax

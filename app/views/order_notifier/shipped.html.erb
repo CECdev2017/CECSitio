@@ -1,0 +1,15 @@
+<h1>Tu orden ha sido enviada</h1>
+<h3>Dear <%= @order.name %></h3>
+<p>
+	Recientemente hemos enviado tu registro 
+</p>
+<p>Detalle de tu registro: </p>
+	<% @order.curso_items.each do |item| %>
+	<ul>
+		<li>
+			<%= item.curso.title %>&times;=item.quantity %>
+		</li>
+	</ul>		
+<% end %>
+
+<p>Gracias</p>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170105162310) do
+ActiveRecord::Schema.define(version: 20170123170432) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -46,6 +46,27 @@ ActiveRecord::Schema.define(version: 20170105162310) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
 
+  create_table "contacts", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.text     "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "curso_items", force: :cascade do |t|
+    t.integer  "curso_id"
+    t.integer  "registro_id"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.integer  "quantity",    default: 1
+    t.integer  "order_id"
+  end
+
+  add_index "curso_items", ["curso_id"], name: "index_curso_items_on_curso_id"
+  add_index "curso_items", ["order_id"], name: "index_curso_items_on_order_id"
+  add_index "curso_items", ["registro_id"], name: "index_curso_items_on_registro_id"
+
   create_table "cursos", force: :cascade do |t|
     t.string   "titulo"
     t.string   "image"
@@ -59,6 +80,23 @@ ActiveRecord::Schema.define(version: 20170105162310) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.text     "address"
+    t.string   "city"
+    t.string   "country"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.string   "telefono"
+    t.boolean  "shipped",    default: false
+  end
+
+  create_table "registros", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

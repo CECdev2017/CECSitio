@@ -1,0 +1,9 @@
+<% unless @order.errors.empty? %>
+	<script type="text/javascript">
+		<% @order.errors.full_messages.each do |msg| %>
+	     	 toastr.error('<%= msg %>' )
+			toastr.error('Todos los campos son obligatorios' )
+
+		<% end %>
+	</script>		
+<% end %>

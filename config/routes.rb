@@ -5,6 +5,13 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   root 'pages#index'
   get 'shop' => 'pages#shop'
+  get 'about' => 'pages#about'
+  
+
+  resources :registros
+  resources :curso_items
+  resources :orders
+  resources :contacts, only: [:new, :create]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,22 +1,19 @@
+
 <!-- Off screen navigation -->
     	<div id="sidr">
+
 	<ul>	
 		<li>
 		  <%= link_to '#', class: "side-logo" do %>
-		    MyStore
+		    CEC
 		    <span class="logo-dot accent-bg"></span>
 	    <% end %>
 		</li>
 		<li class="active">
-		  <%= link_to 'Store', shop_path %>
+		  <%= link_to 'Cursos', shop_path %>
 		</li>
 		<li class="divider"><span></span></li>
-		<li>
-		  <%= link_to 'Privacy', root_path %>
-		</li>
-		<li>
-		  <%= link_to 'Terms & conditions', root_path %>
-		</li>
+		
 	</ul>
 
 			<div class="side-social">
@@ -27,6 +24,7 @@
 				<a href="#"><i class="fa fa-instagram"></i></a>
 			</div>
 		</div>
+		
 
 		<div class="nav-container">
 			<nav class="navbar navbar-default">
@@ -51,33 +49,48 @@
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse" id="collapse-navigation">
 						<ul class="nav navbar-nav">
-							<li class="dropdown">
-							    <a href="./index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Home <span class="fa fa-angle-down"></span></a>
-							    <ul class="dropdown-menu">
-							      	<li class="active"><a href="./index.html">Cursos</a></li>
-							      	<!--<li><a href="./index-list.html">Home List</a></li>
-							      	<li><a href="./index-full-width.html">Home Full</a></li>
-							      	<li><a href="./index-slider.html">Home Slider</a></li> -->
-							    </ul>
+							<li>
+							<%= link_to  root_path do %>
+							<i class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"></i> HOME </a>
+							<% end %>
 							</li>
-							<li><a href="./about.html">Nosotros</a></li>
+
+							<li><%= link_to 'Nosotros', about_path %></li>
 							<li class="dropdown">
 							    <a href="./catalog.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Cursos <span class="fa fa-angle-down"></span></a>
 							    <ul class="dropdown-menu">
-							      	<!--<li><a href="./catalog.html">Cursos Grid</a></li>-->
+							      
 							      	<li><%= link_to 'Lista de Cursos', shop_path %></li>
-							      	<!--<li><a href="./catalog-full-width.html">Cursos Full</a></li> -->
-							      	<!--<li><a href="./product.html">Single Product</a></li>-->
+							      	
 							    </ul>
 							</li>
+
 							<li class="dropdown">
 							    <a href="./blog.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Blog <span class="fa fa-angle-down"></span></a>
 							    
 							</li>
-							<li><a href="./contact.html"><i class="fa fa-paper-plane"></i> Llamanos</a></li>
-							<li><a href="#" class="menu-cart"><i class="fa fa-shopping-cart"></i> $0.00</a></li>
-						</ul>
-						<ul class="nav navbar-nav navbar-right">
+
+
+						<li>
+							<%= link_to  new_contact_path do %>
+							<i class="fa fa-paper-plane"></i> Llamanos</a>
+							<% end %>
+						</li>
+
+						<li>
+							<% if @registro.total_precio > 0 %>
+									<%= link_to  @registro,  class: 'menu-cart'  do %>
+									<class="menu-cart"> <i class="fa fa-shopping-cart"></i>
+									<%= number_to_currency  @registro.total_precio  %>
+								<% end %>
+								<% else %>
+								<a href="#" class="menu-cart"><i class="fa fa-shopping-cart"></i> $0.00</a>
+							<% end %>
+						</li>		
+
+					</ul>
+
+			<ul class="nav navbar-nav navbar-right">
 							<li>
 								<a href="#sidr" class="side-menu-opener">
 									<div class="bars">
@@ -85,10 +98,25 @@
 								        <span class="bar middle"></span>
 								        <span class="bar bottom"></span>
 								    </div>
+
+
 								</a>
-							</li>
-						</ul>
+						  </li>
+			</ul>
+
+			<div class="side-social" align="right">
+				<a href="https://www.facebook.com/cecespolec/"><i class="fa fa-facebook"></i></a>
+				<a href="#"><i class="fa fa-twitter"></i></a>
+				<a href="#"><i class="fa fa-google-plus"></i></a>
+				<a href="#"><i class="fa fa-pinterest"></i></a>
+				<a href="#"><i class="fa fa-instagram"></i></a>
+			</div>
 					</div><!-- /.navbar-collapse -->
 				</div><!-- /.container -->
 			</nav>
 		</div>
+
+
+
+
+						

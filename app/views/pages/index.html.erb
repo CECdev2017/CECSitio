@@ -1,16 +1,29 @@
 		<header class="fullscreen-element">
 				<div class="background-image-holder parallax-background overlay" >
-					<%= image_tag('7.jpg', class: 'background-image', alt:'Background') %>
+					<!--<%= image_tag('7.jpg', class: 'background-image', alt:'Background') %>-->
+
+				<ul class="bxslider">
+				
+					  <li><%= image_tag('banner-web-1.jpg', class: 'background-image', alt:'Background') %></li>
+					  
+					  <li><%= image_tag('banner-web-3.jpg', class: 'background-image', alt:'Background') %></li>
+				</ul>
+
 				</div>
 
 				<div class="container align-vertical hero">
 					<div class="row">
 						<div class="col-md-5 col-sm-5 col-md-offset-7 col-sm-offset-7 text-left">
+						<br>
+						<br>
 							<h1>Auditoría de Buenas Prácticas de Manufactura</h1>
 							<p> ( Mód. III Programa Gestor y Auditor de Buenas Prácticas de Manufactura BPM)</p>
 							<div class="button-group">
-								<a href="#" class="btn btn-default">Comprar</a>
-								<a href="#" class="btn btn-primary">Inscribirse</a>
+								<!--<a href="#" class="btn btn-default">Comprar</a>-->
+								<%= link_to  shop_path, class: "btn btn-primary"  do %>
+  								<i class="fa fa-shopping-cart"></i> Comprar
+  								<% end %>
+							
 							</div>
 						</div>
 					</div><!--end of row-->
@@ -21,23 +34,88 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-4">
-							<a href="#"><span data-icon="v" class="icon"></span> <span class="text">Programas</span></a>
-						</div>
-						<div class="col-sm-4">
-							<a href="#"><span data-icon="/" class="icon"></span> <span class="text">Cursos</span></a>
-						</div>
-						<div class="col-sm-4">
-							<a href="#"><span data-icon="7" class="icon"></span> <span class="text">Seminarios</span></a>
+							<iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;mode=AGENDA&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=continuacec%40gmail.com&amp;color=%231B887A&amp;ctz=America%2FGuayaquil" style="border-width:0" width="385" height="400" frameborder="0" scrolling="no"></iframe>
 						</div>
 
+	
+
+				<div class="col-sm-4" >
+<h4> <%= image_tag('cursoslogo.png', class: 'background-image', alt:'Background') %>
+					Cursos mas solicitados </h4>
+					
+
+					
+					<div class="products-grid container action-bar" >
+
+					<div class="row products-container ">
+
+					<% @cursos.each do |curso| %>
+					<% if curso.id == 1 %>
+						<div class="col-md-4 col-sm-6 col-xs-12 product">
+							<div class="thumbnail" style="background-image: url('/assets/products/<%= curso.image_file_name %>');">
+								<div class="product-details text-center">
+									<div class="align-vertical">
+										<h3><%= curso.titulo %></h3>
+										
+										<%= link_to  shop_path, class: "btn btn-primary"  do %>
+		  								<i class="fa fa-shopping-cart"></i> Comprar
+		  								<% end %>
+		  								
+										<p class="product-price"><%= number_to_currency curso.precio %></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					 <% end %>
+					 <% end %>
+					</div><!-- /.row -->
+				</div><!-- /.container -->
+			
+		
+		</div>
+
+
+
+
+			<div class="col-sm-4">
+				<div class="products-grid">
+					<h4> <%= image_tag('capacitaciones.png', class: 'background-image', alt:'Background') %>
+					Capacitaciones In House </h4>
+				 <div class="container">
+					<div class="row products-container">
+					<% @cursos.each do |curso| %>
+					<% if curso.id == 2 %>
+						<div class="col-md-4 col-sm-6 col-xs-12 product">
+							<div class="thumbnail" style="background-image: url('/assets/products/<%= curso.image_file_name %>');">
+								<div class="product-details text-center">
+									<div class="align-vertical">
+										<h3><%= curso.titulo %></h3>
+										
+										<%= link_to  shop_path, class: "btn btn-primary"  do %>
+		  								<i class="fa fa-shopping-cart"></i> Comprar
+		  								<% end %>
+		  								
+										<p class="product-price"><%= number_to_currency curso.precio %></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					 <% end %>
+					 <% end %>
 					</div><!-- /.row -->
 				</div><!-- /.container -->
 			</div>
-
+						</div>
+					</div><!-- /.row -->
+				</div><!-- /.container -->
+			</div>
+			</div>
+<!-- 
 			<section>
 				<div class="background-image-holder overlay" data-stellar-background-ratio="0.9">
 					<%= image_tag('7.jpg', class: 'background-image', alt:'Background') %>
 				</div>
+				
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-5 text-left">
@@ -45,23 +123,28 @@
 							<p class="description">Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates depudiandae sint et molestiae.</p>
 							<a href="#" class="btn btn-primary">Shop Now</a>
 						</div>
-					</div><!--end of row-->
-				</div><!--end of container-->
-			</section>
+
+					</div>
+				</div>
+			</section> -->
 
 			<%= render 'shared/list' %>
 
 			<section>
 				<div class="background-image-holder on-page overlay">
-					<%= image_tag('bg-5.jpg', class: 'background-image', alt:'Background') %>
+
+					<%= image_tag('banner-web1.jpg', class: 'background-image', alt:'Background') %>
 				</div>
-				<div class="container">
-					<div class="row">
-						<div class="col-sm-5 col-sm-offset-7 text-right">
+
+				<div class="container" >
+					<div class="row" >
+						<div class="col-sm-5 col-sm-offset-7 text-right" >
+						<!--
 							<h2 class="page-title">Modern Chair<span class="accent-color">.</span></h2>
 							<p class="description">Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates depudiandae sint et molestiae.</p>
 							<a href="#" class="btn btn-primary">Shop Now</a>
+-->
 						</div>
-					</div><!--end of row-->
-				</div><!--end of container-->
+					</div>
+				</div>
 			</section>

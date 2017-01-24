@@ -191,6 +191,10 @@ section.products-grid .product .product-details:before {
   background: #2196F3;
 }
 
+div.products-grid .product .product-details:before {
+  background: #2196F3;
+}
+
 .thumbnail.with-info .info {
   background: #2196F3;
 }

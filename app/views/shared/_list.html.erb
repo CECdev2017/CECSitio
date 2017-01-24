@@ -9,7 +9,10 @@
 									<div class="align-vertical">
 										<h3><%= curso.titulo %></h3>
 										
-										<a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Inscribirse</a>
+										<%= link_to  shop_path, class: "btn btn-primary"  do %>
+		  								<i class="fa fa-shopping-cart"></i> Comprar
+		  								<% end %>
+		  								
 										<p class="product-price"><%= number_to_currency curso.precio %></p>
 									</div>
 								</div>

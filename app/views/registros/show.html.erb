@@ -1,0 +1,41 @@
+<header class="secondary">
+
+
+				<div class="background-image-holder parallax-background overlay" data-stellar-background-ratio="0.9">
+					<%= image_tag('banner-web1.jpg', class: 'background-image', alt:'Background') %>
+					<!--<img class="background-image" alt="Background Image" src="images/1600x900.png">-->
+				</div>
+
+				<div class="container align-vertical hero">
+					<div class="row">
+						<div class="col-md-5 text-left">
+							
+							<!--<p>Excel Aplicado a las Finanzas, Elaboración y Manejo de Nómina, Análisis Financiero, Liderazgo, Comunicación Efectiva y Trabajo en Equipo, Control Presupuestario</p>-->
+						</div>
+					</div><!--end of row-->
+				</div><!--end of container-->
+
+			</header>
+
+
+
+<section class="product-list">
+<div class="container">
+<div class="col-md-12">
+<h1>Su registro</h1>
+	
+	
+		<br>
+		<%= render 'registros/registro' %>
+		<br>
+		<h2>Detalle de Inscripccion </h2>
+		<h5>Total: <%= number_to_currency @registro.total_precio %></h5>
+		<br>
+		<%= button_to 'Registrar', new_order_path, method: :get %>
+		<br>
+			<%= link_to 'Volver', shop_path %>
+		<br>
+		<%= link_to 'Limpiar o Cancelar registro de Inscripccion', @registro, method: :delete, data: {confirm: 'Estas Seguro de eliminar tu registro' }   %>
+		</div>
+	</div>
+</section>

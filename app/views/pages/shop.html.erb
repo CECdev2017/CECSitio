@@ -1,14 +1,20 @@
 <header class="secondary">
 				<div class="background-image-holder parallax-background overlay" data-stellar-background-ratio="0.9">
-					<%= image_tag('bg-5.jpg', class: 'background-image', alt:'Background') %>
-					<!--<img class="background-image" alt="Background Image" src="images/1600x900.png">-->
+				<ul class="bxslider" >
+					  <li><%= image_tag('banner-web1.jpg', class: 'background-image', alt:'Background') %></li>
+					  <li><%= image_tag('banner-web.jpg', class: 'background-image', alt:'Background') %></li>
+				</ul>
+					<!-- <%= image_tag('bg-5.jpg', class: 'background-image', alt:'Background') %> 
+					<img class="background-image" alt="Background Image" src="images/1600x900.png">-->
 				</div>
 
 				<div class="container align-vertical hero">
 					<div class="row">
 						<div class="col-md-5 text-left">
+						<!--%= image_tag('bg-7.jpg', class: 'background-image', alt:'Background') %>-->
+
 							<h1>Cursos en catalogo</h1>
-							<p>Excel Aplicado a las Finanzas, Elaboración y Manejo de Nómina, Análisis Financiero, Liderazgo, Comunicación Efectiva y Trabajo en Equipo, Control Presupuestario</p>
+							<p> Excel Aplicado a las Finanzas, Elaboración y Manejo de Nómina, Análisis Financiero, Liderazgo, Comunicación Efectiva y Trabajo en Equipo, Control Presupuestario</p>
 						</div>
 					</div><!--end of row-->
 				</div><!--end of container-->
@@ -41,7 +47,9 @@
 
 											</p>
 
-											<a href="#" class="btn btn-default"><i class="fa fa-shopping-cart"></i> Incribirse</a>
+									<%= button_to curso_items_path(curso_id: curso), class: 'btn btn-default' do %>
+  											<i class="fa fa-shopping-cart"></i> Incribirse
+											<% end %>
 										</div>
 									</div>
 								</div>
@@ -51,14 +59,3 @@
 					<% end %>
 				</div>
 		</section>
-
-
-			<div class="no-padding-top section">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12">
-							<a href="catalog.html" class="load-more"><i class="fa fa-ellipsis-h"></i></a>
-						</div>
-					</div><!-- /.row -->
-				</div><!-- /.container -->
-			</div>
